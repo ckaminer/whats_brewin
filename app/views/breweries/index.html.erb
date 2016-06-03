@@ -1,0 +1,9 @@
+<h1>Breweries Index</h1>
+
+<ul>
+  <% @breweries.each do |brewery| %>
+    <li><%= link_to brewery.name %> - <%= brewery.location %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New Brewery", new_brewery_path %>
