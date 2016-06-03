@@ -1,0 +1,20 @@
+<h1>New Brewery</h1>
+
+<%= form_for(@brewery) do |f| %>
+  <% if @brewery.errors.any? %>
+    <h2><%= pluralize(@brewery.errors.count, "error") %> prohibited this record from being saved:</h2>
+    <ul>
+      <% @brewery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.submit %>
+<% end %>
