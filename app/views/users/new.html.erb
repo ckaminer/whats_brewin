@@ -1,0 +1,9 @@
+<h2>So you fancy yourself a beer connoisseur, ay? Well then we are happy to have you! Sign up below!</h2>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.submit "Create Account" %>
+<% end %>

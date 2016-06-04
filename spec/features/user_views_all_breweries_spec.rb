@@ -8,7 +8,7 @@ RSpec.feature "User views all breweries" do
     expect(page).to have_content "Cisco Brewing Co."
 
     click_on "Cisco Brewing Co."
-
+    
     expect(current_path).to eq brewery_path(brewery)
   end
 end
