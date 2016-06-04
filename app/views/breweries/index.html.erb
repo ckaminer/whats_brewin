@@ -2,7 +2,7 @@
 
 <ul>
   <% @breweries.each do |brewery| %>
-    <li><%= link_to brewery.name %> - <%= brewery.location %></li>
+    <li><%= link_to brewery.name, brewery_path(brewery) %> - <%= brewery.location %></li>
   <% end %>
 </ul>
 
