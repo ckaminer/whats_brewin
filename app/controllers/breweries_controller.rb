@@ -4,23 +4,10 @@ class BreweriesController < ApplicationController
     @breweries = Brewery.all
   end
 
-  def new
-    @brewery = Brewery.new
-  end
-
-  def create
-    @brewery = Brewery.new(brewery_params)
-
-    if @brewery.save
-      redirect_to brewery_path(@brewery)
-    else
-      render :new
-    end
-  end
-
   def show
     @brewery = Brewery.find(params[:id])
   end
+
 
 private
 
