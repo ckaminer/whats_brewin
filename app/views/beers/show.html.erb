@@ -1,3 +1,3 @@
 <h1><%= @beer.name %></h1>
 <h2><%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %> - <%= @beer.brewery.location %></h2>
-<h2><%= link_to @beer.style.name, brewery_path(@beer.style) %></h2>
+<h2><%= link_to @beer.style.name, style_path(@beer.style) %></h2>
