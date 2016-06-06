@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
   validates :password, presence: true
 
   enum role: ["default", "admin"]
+
+  has_many :beers, through: :ratings
 end

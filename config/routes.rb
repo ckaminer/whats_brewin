@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :styles, only: [:new]
   end
 
+  resources :ratings, only: [:index]
+
   post '/breweries', to: 'admin/breweries#create'
 
   post '/beers', to: 'admin/beers#create'
