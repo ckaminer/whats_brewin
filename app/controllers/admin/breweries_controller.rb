@@ -1,5 +1,9 @@
 class Admin::BreweriesController < Admin::BaseController
 
+  def index
+    @breweries = Brewery.all
+  end
+  
   def new
     @brewery = Brewery.new
   end
@@ -14,6 +18,22 @@ class Admin::BreweriesController < Admin::BaseController
     end
   end
 
+  def show
+    @brewery = Brewery.find(params[:id])
+  end
+
+  def edit
+    @brewery = Brewery.find(params[:id])
+  end
+
+  def update
+    @brewery = Brewery.find(params[:id])
+    if @brewery.update(brewery_params)
+      redirect_to admin_brewery_path(@brewery)
+    else
+      render :edit
+    end
+  end
 
 private
 

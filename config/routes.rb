@@ -13,16 +13,24 @@ Rails.application.routes.draw do
   resources :styles, only: [:index, :show]
 
   namespace :admin do
-    resources :breweries, only: [:new]
+    resources :breweries, only: [:index, :new, :create, :show, :edit, :update]
     resources :beers, only: [:new]
     resources :styles, only: [:new]
   end
 
+  # resources :admin do
+  #   resources :breweries, only: [:new, :create, :edit, :update]
+  #   resources :beers, only: [:new]
+  #   resources :styles, only: [:new]
+  # end
+
   post '/breweries', to: 'admin/breweries#create'
+  patch '/breweries/:id', to: 'admin/breweries#update'
 
   post '/beers', to: 'admin/beers#create'
 
   post '/styles', to: 'admin/styles#create'
+
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
