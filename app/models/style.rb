@@ -1,6 +1,5 @@
-class Brewery < ActiveRecord::Base
+class Style < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
-  validates :location, presence: true
 
   has_many :beers
 end
