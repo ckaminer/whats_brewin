@@ -42,6 +42,8 @@ group :development, :test do
   gem 'mocha'
 end
 
+gem 'simple_form'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

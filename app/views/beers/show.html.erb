@@ -1,3 +1,9 @@
 <h1><%= @beer.name %></h1>
 <h2><%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %> - <%= @beer.brewery.location %></h2>
 <h2><%= link_to @beer.style.name, style_path(@beer.style) %></h2>
+
+
+<%= simple_form_for [@beer, @rating], url: beer_ratings_path(@beer), method: :post do |f| %>
+  <%= f.input :value, :label => "Rating", :collection => 1..5, :as => :radio_buttons %>
+  <%= f.button :submit, "Rate this beer!" %>
+<% end %>
