@@ -1,7 +1,9 @@
 <h1>Breweries Index</h1>
-
-<ul>
+<table class="table table-striped table-bordered">
   <% @breweries.each do |brewery| %>
-    <li><%= link_to brewery.name, brewery_path(brewery) %> - <%= brewery.location %></li>
-  <% end %>
-</ul>
+    <tr>
+      <td><%= link_to brewery.name, brewery_path(brewery) %></td>
+      <td><%= brewery.location %></td>
+    </tr>
+<% end %>
+</table>
