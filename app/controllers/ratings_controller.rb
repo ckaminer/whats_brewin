@@ -1,7 +1,9 @@
 class RatingsController < ApplicationController
 
   def create
-    @rating = @beer.ratings.new(value: params[:value], user_id: current_user.id)
+    @beer = Beer.find(params[:beer_id])
+    @rating = @beer.ratings.new(value: params[:rating][:value], user_id: current_user.id)
+
     # @rating.beer = Beer.find(params[:beer_id])
     # @rating.user = current_user
     if @rating.save
@@ -15,6 +17,7 @@ class RatingsController < ApplicationController
   def update
     @rating = Rating.find(params[:id])
     @rating.update_attribute :value, params[:value]
+  end
 
 private
 
