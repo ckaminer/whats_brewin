@@ -8,7 +8,6 @@ class BreweriesController < ApplicationController
     @brewery = Brewery.find(params[:id])
   end
 
-
 private
 
   def brewery_params
