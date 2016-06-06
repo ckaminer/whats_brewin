@@ -1,7 +1,10 @@
 <h1>Beers Index</h1>
-
-<ul>
+<table class="table table-striped table-bordered">
   <% @beers.each do |beer| %>
-    <li><%= link_to beer.name, beer_path(beer) %> - <%= beer.brewery.name %></li>
-  <% end %>
-</ul>
+    <tr>
+      <td><%= link_to beer.name, beer_path(beer) %></td>
+      <td><%= beer.brewery.name %></td>
+      <td><%= beer.style.name %></td>
+    </tr>
+<% end %>
+</table>
