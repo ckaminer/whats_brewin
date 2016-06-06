@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
 
   enum role: ["default", "admin"]
 
+  has_many :ratings
   has_many :beers, through: :ratings
 end

@@ -3,7 +3,9 @@
 <h2><%= link_to @beer.style.name, style_path(@beer.style) %></h2>
 
 
-<%= form_for(@rating) do |f| %>
-  <%= f.select("rating", "value", (1..5)) %>
+<%= form_for [@beer, @rating], url: beer_ratings_path(@beer), method: :post do |f| %>
+  <!-- <%= f.label("rating", "value", (1..5)) %> -->
+  <%= f.label :rating %>
+  <%= f.select :rating, 1..5 %>
   <%= f.submit "Rate this beer!" %>
 <% end %>

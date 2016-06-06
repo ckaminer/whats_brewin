@@ -9,7 +9,6 @@ class BeersController < ApplicationController
     @rating = Rating.new
   end
 
-
 private
 
   def beer_params

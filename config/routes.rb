@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :breweries, only: [:index, :show]
 
-  resources :beers, only: [:index, :show]
+  resources :beers, only: [:index, :show] do
+    resources :ratings, only: [:create, :update]
+  end
 
   resources :styles, only: [:index, :show]
 
@@ -15,8 +17,6 @@ Rails.application.routes.draw do
     resources :beers, only: [:new]
     resources :styles, only: [:new]
   end
-
-  resources :ratings, only: [:index]
 
   post '/breweries', to: 'admin/breweries#create'
 
