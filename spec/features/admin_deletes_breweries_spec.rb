@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Admin deletes a brewery" do
-  context "only an admin can edit" do
+  context "only an admin can delete" do
     scenario "they are returned to the admin brewery index" do
     admin = User.create(username: "Charlie", password: "PASSWORD", role: 1)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
