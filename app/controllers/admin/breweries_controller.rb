@@ -1,9 +1,11 @@
 class Admin::BreweriesController < Admin::BaseController
 
+  before_action :set_brewery, only: [:show, :edit, :update, :destroy]
+
   def index
     @breweries = Brewery.all
   end
-  
+
   def new
     @brewery = Brewery.new
   end
@@ -19,15 +21,12 @@ class Admin::BreweriesController < Admin::BaseController
   end
 
   def show
-    @brewery = Brewery.find(params[:id])
   end
 
   def edit
-    @brewery = Brewery.find(params[:id])
   end
 
   def update
-    @brewery = Brewery.find(params[:id])
     if @brewery.update(brewery_params)
       redirect_to admin_brewery_path(@brewery)
     else
@@ -35,7 +34,16 @@ class Admin::BreweriesController < Admin::BaseController
     end
   end
 
+  def destroy
+    @brewery.destroy
+    redirect_to admin_breweries_path
+  end
+
 private
+
+  def set_brewery
+    @brewery = Brewery.find(params[:id])
+  end
 
   def brewery_params
     params.require(:brewery).permit(:name, :location)

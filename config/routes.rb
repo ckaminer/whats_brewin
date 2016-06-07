@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :styles, only: [:index, :show]
 
   namespace :admin do
-    resources :breweries, only: [:index, :new, :create, :show, :edit, :update]
+    resources :breweries
     resources :beers, only: [:new]
     resources :styles, only: [:new]
   end
