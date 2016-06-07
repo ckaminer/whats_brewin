@@ -1,0 +1,6 @@
+<h1><%= @style.name %> - Admin</h1>
+
+<footer>
+  <%= link_to "Delete Style", admin_style_path(@style), method: :delete %>
+  <%= link_to "Edit Style", edit_admin_style_path(@style) %>
+</footer>

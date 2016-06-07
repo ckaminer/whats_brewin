@@ -1,0 +1,8 @@
+<h1>Styles Index - Admin</h1>
+<table class="table table-striped table-bordered">
+  <% @styles.each do |style| %>
+    <tr>
+      <td><%= link_to style.name, admin_style_path(style) %></td>
+    </tr>
+<% end %>
+</table>

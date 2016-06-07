@@ -1,0 +1,10 @@
+<h1>Beers Index - Admin</h1>
+<table class="table table-striped table-bordered">
+  <% @beers.each do |beer| %>
+    <tr>
+      <td><%= link_to beer.name, admin_beer_path(beer) %></td>
+      <td><%= beer.brewery.name %></td>
+      <td><%= beer.style.name %></td>
+    </tr>
+<% end %>
+</table>

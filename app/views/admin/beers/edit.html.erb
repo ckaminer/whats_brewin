@@ -1,0 +1,23 @@
+<h1>Edit Beer</h1>
+
+<%= form_for(@beer) do |f| %>
+  <% if @beer.errors.any? %>
+    <h2><%= pluralize(@beer.errors.count, "error") %> prohibited this record from being saved:</h2>
+    <ul>
+      <% @beer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :brewery %>
+  <%= f.collection_select(:brewery_id, @breweries, :id, :name, { include_blank: 'Select a brewery'}, { class: 'brewery-select'}) %>
+
+  <%= f.label :style %>
+  <%= f.collection_select(:style_id, @styles, :id, :name, { include_blank: 'Select a style'}, { class: 'style-select' }) %>
+
+  <%= f.submit %>
+<% end %>

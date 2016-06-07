@@ -1,0 +1,8 @@
+<h1><%= @beer.name %> - Admin</h1>
+<h2><%= @beer.brewery.name %></h2>
+<h2><%= @beer.style.name %></h2>
+
+<footer>
+  <%= link_to "Delete Beer", admin_beer_path(@beer), method: :delete %>
+  <%= link_to "Edit Beer", edit_admin_beer_path(@beer) %>
+</footer>
