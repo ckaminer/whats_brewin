@@ -1,7 +1,7 @@
 class RatingsController < ApplicationController
+  before_action :set_beer, only: [:create, :update]
 
   def create
-    @beer = Beer.find(params[:beer_id])
     @rating = @beer.ratings.new(value: params[:rating][:value], user_id: current_user.id)
 
     # @rating.beer = Beer.find(params[:beer_id])
